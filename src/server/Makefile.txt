@@ -1,0 +1,17 @@
+#Chuan-Yi Chan
+#CMPE 156 Assignment 2
+
+SOURCES = Makefile README myclient.c myserver.c myclient_test.c
+PROJECT = cmpe156 asg 1
+
+myserver : myserver.o
+	gcc -pthread -o myserver myserver.o
+
+myclient : myclient.o
+	gcc -pthread -o myclient myclient.o
+
+myclient_test : myclient_test.o
+	gcc -o myclient_test myclient_test.o
+
+clean : 
+	rm -f *.o myserver myclient
